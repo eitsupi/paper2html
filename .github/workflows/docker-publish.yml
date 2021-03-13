@@ -6,11 +6,12 @@ on:
       - 'master'
     tags:
       - v*
+  schedule:
+    - cron: '0 0 5 * *'
 
 jobs:
   build_and_push:
     runs-on: ubuntu-latest
-    if: github.event_name == 'push'
     env:
       IMAGE_NAME: paper2html
     steps:
